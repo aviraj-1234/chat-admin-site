@@ -1,9 +1,9 @@
 // ----- ADMIN PASSWORD -----
-const adminPassword = "admin123";  // aap apna password yaha daal sakte ho
+const adminPassword = "admin123"; // apna password yaha daal do
 
-// ----- SUPABASE INIT -----
-const supabaseUrl = "https://cabavzeycprognnyafkg.supabase.co";   // apna Supabase Project URL
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhYmF2emV5Y3Byb2dubnlhZmtnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU0NDkxMzQsImV4cCI6MjA3MTAyNTEzNH0.ypJbosJtgC_04nryHjaxU0602As2LHO58fRks1206Zg";       // apna Supabase anon public key
+// ----- SUPABASE INIT (must be on top) -----
+const supabaseUrl = "YOUR_SUPABASE_URL";   // apna Supabase URL
+const supabaseKey = "YOUR_ANON_KEY";       // apna anon key
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ----- DOM ELEMENTS -----
@@ -16,7 +16,7 @@ function login() {
   if(pw === adminPassword) {
     document.getElementById('login-container').style.display = 'none';
     document.getElementById('chat-container').style.display = 'block';
-    loadChat();
+    loadChat(); // load messages only after login
   } else {
     loginMsg.textContent = "Wrong password!";
   }
@@ -43,4 +43,3 @@ async function loadChat() {
     chatBox.appendChild(div);
   });
 }
-
