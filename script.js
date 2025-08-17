@@ -2,8 +2,8 @@
 const adminPassword = "admin123";  // aap apna password yaha daal sakte ho
 
 // ----- SUPABASE INIT -----
-const supabaseUrl = "YOUR_SUPABASE_URL";   // apna Supabase Project URL
-const supabaseKey = "YOUR_ANON_KEY";       // apna Supabase anon public key
+const supabaseUrl = "https://cabavzeycprognnyafkg.supabase.co";   // apna Supabase Project URL
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhYmF2emV5Y3Byb2dubnlhZmtnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU0NDkxMzQsImV4cCI6MjA3MTAyNTEzNH0.ypJbosJtgC_04nryHjaxU0602As2LHO58fRks1206Zg";       // apna Supabase anon public key
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 // ----- DOM ELEMENTS -----
@@ -43,3 +43,4 @@ async function loadChat() {
     chatBox.appendChild(div);
   });
 }
+
