@@ -1,19 +1,19 @@
 // ----- ADMIN PASSWORD -----
-const adminPassword = "admin123";
-
-// ----- DOM Elements -----
-const loginMsg = document.getElementById('login-msg');
-const chatBox = document.getElementById('chat-box');
+const adminPassword = "admin123";  // aap apna password yaha daal sakte ho
 
 // ----- SUPABASE INIT -----
-const supabaseUrl = "https://cabavzeycprognnyafkg.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhYmF2emV5Y3Byb2dubnlhZmtnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU0NDkxMzQsImV4cCI6MjA3MTAyNTEzNH0.ypJbosJtgC_04nryHjaxU0602As2LHO58fRks1206Zg";
+const supabaseUrl = "YOUR_SUPABASE_URL";   // apna Supabase Project URL
+const supabaseKey = "YOUR_ANON_KEY";       // apna Supabase anon public key
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+// ----- DOM ELEMENTS -----
+const loginMsg = document.getElementById('login-msg');
+const chatBox = document.getElementById('chat-box');
 
 // ----- LOGIN FUNCTION -----
 function login() {
   const pw = document.getElementById('password').value;
-  if(pw === adminPassword){
+  if(pw === adminPassword) {
     document.getElementById('login-container').style.display = 'none';
     document.getElementById('chat-container').style.display = 'block';
     loadChat();
